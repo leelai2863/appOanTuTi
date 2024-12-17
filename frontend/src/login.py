@@ -1,6 +1,7 @@
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 from tkinter import Canvas, messagebox
+from pathlib import Path
 from PIL import Image, ImageTk
 
 
@@ -28,8 +29,8 @@ class LoginRegisterApp:
         self.notebook.add(self.login_frame, text="Đăng Nhập")
 
         # Chèn hình nền vào tab Đăng Nhập
-        bg_image_path = "D:\\python_learning\\appOanTuTi\\frontend\\image\\backgroundLoginRis.png"
-        self.add_background_to_tab(self.login_frame, bg_image_path)
+        bg_image_path = Path.cwd() / "frontend" / "image" / "backgroundLoginRis.png"
+        self.add_background_to_tab(self.login_frame, str(bg_image_path))
 
         # Tiêu đề "Đăng Nhập"
         ttk.Label(
@@ -56,8 +57,8 @@ class LoginRegisterApp:
         self.notebook.add(self.register_frame, text="Đăng Ký")
 
         # Chèn hình nền vào tab Đăng Ký
-        bg_image_path = "D:\\python_learning\\appOanTuTi\\frontend\\image\\backgroundLoginRis.png"
-        self.add_background_to_tab(self.register_frame, bg_image_path)
+        bg_image_path = Path.cwd() / "frontend" / "image" / "backgroundLoginRis.png"
+        self.add_background_to_tab(self.register_frame, str(bg_image_path))
 
         # Tiêu đề "Đăng Ký"
         ttk.Label(
