@@ -172,7 +172,7 @@ class LoginRegisterApp:
 
 
 
-if __name__ == "__main__":
-    app = ttk.Window("Oẳn Tù Tì - Đăng Nhập & Đăng Ký", themename="cosmo")
-    LoginRegisterApp(app)
-    app.mainloop()
+# if __name__ == "__main__":
+#     app = ttk.Window("Oẳn Tù Tì - Đăng Nhập & Đăng Ký", themename="cosmo")
+#     LoginRegisterApp(app)
+#     app.mainloop()

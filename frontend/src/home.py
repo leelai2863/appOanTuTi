@@ -3,6 +3,7 @@ from ttkbootstrap import Style
 from ttkbootstrap.constants import *
 from tkinter import ttk
 from PIL import Image, ImageTk  # Thư viện Pillow để xử lý ảnh động
+from pathlib import Path
 
 class HomePage:
     def __init__(self, root):
@@ -15,7 +16,8 @@ class HomePage:
         self.create_styles()
 
         # Thêm background ảnh động
-        self.add_animated_background("D:\\appOanTuTi\\frontend\\image\\giphy.webp")
+        background_path = Path.cwd() / "frontend" / "image" / "giphy.webp"
+        self.add_animated_background(str(background_path))
 
         # Tiêu đề trang chủ
         title_label = ttk.Label(
@@ -110,7 +112,7 @@ class HomePage:
         self.root.quit()
 
 # Chạy giao diện
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = HomePage(root)
-    root.mainloop()
+# if __name__ == "__main__":
+#     root = tk.Tk()
+#     app = HomePage(root)
+#     root.mainloop()
