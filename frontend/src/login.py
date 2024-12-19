@@ -5,8 +5,14 @@ from tkinter import Canvas, messagebox
 import tkinter as tk
 from pathlib import Path
 from PIL import Image, ImageTk
-from my_module.LoginRis import create_database
+from LoginRis import create_database
 from home import HomePage
+
+
+def _start():
+    root = tk.Tk()
+    app = HomePage(root)
+    root.mainloop()
 
 class LoginRegisterApp:
     def __init__(self, root):
@@ -132,12 +138,10 @@ class LoginRegisterApp:
                 messagebox.showinfo("Thông báo", f"Đăng nhập thành công!\nTài khoản: {username}")
 
                 # Đóng cửa sổ đăng nhập
-                self.root.quit()
                 self.root.destroy()
+                self.root.quit()
 
-                root = tk.Tk()
-                HomePage(root)  # Hiển thị giao diện HomePage
-                root.mainloop()
+                _start()
 
             else:
                 messagebox.showerror("Lỗi", "Tài khoản hoặc mật khẩu không đúng!")
@@ -175,7 +179,7 @@ class LoginRegisterApp:
 
 
 
-# if __name__ == "__main__":
-#     app = ttk.Window("Oẳn Tù Tì - Đăng Nhập & Đăng Ký", themename="cosmo")
-#     LoginRegisterApp(app)
-#     app.mainloop()
+if __name__ == "__main__":
+    app = ttk.Window("Oẳn Tù Tì - Đăng Nhập & Đăng Ký", themename="cosmo")
+    LoginRegisterApp(app)
+    app.mainloop()
