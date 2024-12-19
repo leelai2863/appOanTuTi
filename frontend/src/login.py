@@ -8,12 +8,6 @@ from PIL import Image, ImageTk
 from LoginRis import create_database
 from home import HomePage
 
-
-def _start():
-    root = tk.Tk()
-    app = HomePage(root)
-    root.mainloop()
-
 class LoginRegisterApp:
     def __init__(self, root):
         self.root = root
@@ -137,11 +131,10 @@ class LoginRegisterApp:
             if user:
                 messagebox.showinfo("Thông báo", f"Đăng nhập thành công!\nTài khoản: {username}")
 
-                # Đóng cửa sổ đăng nhập
-                self.root.destroy()
-                self.root.quit()
-
-                _start()
+                # Tạo cửa sổ HomePage mới
+                self.root.withdraw()  # Ẩn cửa sổ đăng nhập
+                home_root = tk.Toplevel(self.root)  # Tạo cửa sổ mới cho trang chủ
+                app = HomePage(home_root)
 
             else:
                 messagebox.showerror("Lỗi", "Tài khoản hoặc mật khẩu không đúng!")
