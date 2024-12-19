@@ -4,6 +4,7 @@ from ttkbootstrap.constants import *
 from tkinter import ttk
 from PIL import Image, ImageTk  # Thư viện Pillow để xử lý ảnh động
 from pathlib import Path
+from find_match import find_match
 
 class HomePage:
     def __init__(self, root):
@@ -101,9 +102,9 @@ class HomePage:
 
         # Thay đổi màu chữ của nút "Custom.TButton"
         change_color("Custom.TButton")
-
+    
     def play_online(self):
-        print("Playing Online...")
+        find_match()
 
     def play_bots(self):
         print("Playing with Bots...")
@@ -111,8 +112,7 @@ class HomePage:
     def logout(self):
         self.root.quit()
 
-# Chạy giao diện
-# if __name__ == "__main__":
-#     root = tk.Tk()
-#     app = HomePage(root)
-#     root.mainloop()
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = HomePage(root)
+    root.mainloop()
