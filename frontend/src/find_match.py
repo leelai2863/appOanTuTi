@@ -7,11 +7,11 @@ from predict import match_rersult
 server_status = ''
 def start_server():
 	server_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-	server_socket.settimeout(5)
+	# server_socket.settimeout(5)
 	host_ip = "26.232.164.220"
 	print('HOST IP:',host_ip)
 	port = 9999
-	socket_address = (host_ip,port)
+	socket_address = (host_ip, port)
 	server_socket.bind(socket_address)
 	server_socket.listen(2)
 	client = []
@@ -65,7 +65,7 @@ def show_client(addr, client_socket, client):
 				text = f"{3 - second}"
 				cv2.imshow(f"FROM {addr}",client_frame)
 				key = cv2.waitKey(1) & 0xFF
-				if key == ord('q') or second >= 3:
+				if key == ord('q'):
 					break
 	except Exception as e:
 		pass
@@ -122,8 +122,8 @@ def find_match():
 		client_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		result_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 		port = 9999
-		client_socket.connect(("26.232.164.220",port))
-		result_socket.connect(("26.232.164.220",port))
+		client_socket.connect(("26.217.160.37",port))
+		result_socket.connect(("26.217.160.37",port))
 		return connect_to_opponent(client_socket, result_socket)
 	except:
 		start_server()

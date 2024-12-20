@@ -70,4 +70,10 @@ def match_rersult(c1_img, c2_img):
     except:
         c2_result = None
     print(c1_result, c2_result)
-    return kkb[c1_result][c2_result] if c1_result else '', kkb[c2_result][c1_result] if c2_result else ''
+    if c1_result == None and c2_result:
+        return "Lose", "Win"
+    if c2_result == None and c1_result:
+        return "Win", "Lose"
+    if c2_result == None and c1_result == None:
+        return "Draw", "Draw"
+    return kkb[c1_result][c2_result], kkb[c2_result][c1_result]
